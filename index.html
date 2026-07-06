@@ -40,11 +40,11 @@
     </div>
 
     <ul class="nav-links">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Skills</a></li>
-      <li><a href="#">Education</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="http://127.0.0.1:3000/index.html?vscode-livepreview=true">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skill">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
@@ -92,7 +92,7 @@
   <section class="cards-container">
 
     <!-- ABOUT SECTION -->
-    <div class="card">
+    <div id="about" class="card">
         <h2>About Me</h2>
 
         <p>
@@ -116,7 +116,7 @@
 
 
     <!-- Skills -->
-    <div class="card">
+    <div class="card" id="skill">
       <h2>Skills</h2>
 
       <ul class="skills-list">
@@ -129,23 +129,28 @@
     </div>
 
     <!-- PROJECT SECTION -->
-    <div class="card">
+    <div class="card" id="project">
         <h2>Projects</h2>
 
         <!-- Visible Initially -->
-        <p>
-            I have developed my personal portfolio website, where I showcase my
-            projects, technical skills, and learning journey.
-        </p>
+        <h3>Personal Portfolio Website:-</h3>
+        <ol>
+            <li>Designed responsive portfolio using HTML/CSS.</li>
+            <li>Showcased skills, projects, education, contact.</li>
+            <li>Implemented responsive, semantic web design.</li>
+            <li>Integrated GitHub and LinkedIn profiles.</li>
+            <li>Concepts used:- HTML5, CSS3, Semantic HTML, Git & Github</li>
+        </ol>
 
         <!-- Hidden Initially -->
         <div id="projectMore" class="more-text">
-            <p>
-                Additionally, I built a <strong>Subscription Billing Engine</strong>
-                in Python using the <strong>Test-Driven Development (TDD)</strong>
-                approach, demonstrating object-oriented design, clean code
-                practices, and comprehensive unit testing.
-            </p>
+            <ol>
+                <li>Developed Python subscription billing engine.</li>
+                <li>Implemented billing, discounts, invoices, payments.</li>
+                <li>Built modular OOP SQLite architecture.</li>
+                <li>Simulated real-world SaaS billing workflows.</li>
+                <li>Concepts used:- Python3, SQLite, Test Driven Development, Object-Oriented Programming (OOP), Repository Pattern, Polymorphism, Abstract Base Classes (ABC), Data Classes, Git, GitHub, Virtual Environment (venv), CLI</li>
+            </ol>
         </div>
 
         <button class="read-btn" onclick="toggleProject()" id="projectBtn">
@@ -154,7 +159,7 @@
     </div>
 
     <!-- EDUCATION SECTION -->
-    <div class="card">
+    <div class="card" id="education">
         <h2>Education</h2>
 
         <!-- Visible First -->
@@ -191,7 +196,7 @@
 
   </section>
   <!-- Contact Section -->
-    <div class="contact">
+    <div class="contact" id="contact">
         <div class="card">
             <h2 style="text-align: center;">Connect With Me</h2>
 
