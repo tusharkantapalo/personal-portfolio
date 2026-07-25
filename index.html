@@ -1,61 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tusharkanta Palo | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tusharkanta Palo | Personal Portfolio</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css">
-
-  <title>Tusharkanta Palo | Portfolio</title>
-
-  <meta name="description"
-    content="Portfolio of Tusharkanta Palo - Computer Science Engineering Student, Python Developer, C Programmer, and Software Engineering Enthusiast.">
-
-  <meta property="og:title"
-    content="Tusharkanta Palo | Portfolio">
-
-  <meta property="og:description"
-    content="Explore my projects, technical skills, education, and software development journey.">
-
-  <meta property="og:type"
-    content="website">
-
-  <meta property="og:url"
-    content="https://tusharkantapalo.github.io/personal-portfolio/">
-
-  <meta property="og:image"
-    content="https://tusharkantapalo.github.io/personal-portfolio/preview.png">
-
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- Navbar -->
-
-  <nav class="navbar">
-
+  <!-- NAVBAR -->
+  <header class="navbar">
     <div class="logo">
       <span>TP</span> Tusharkanta Palo
     </div>
 
     <ul class="nav-links">
-      <li><a href="http://127.0.0.1:3000/index.html?vscode-livepreview=true">Home</a></li>
+      <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#skill">Skills</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-  </nav>
+  </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-
-    <div class="hero-left">
+  <!-- HERO -->
+  <main id="home" class="hero">
+    <div class="hero-left reveal">
       <h3>Hello, I’m</h3>
 
       <h1>Tusharkanta Palo</h1>
@@ -67,202 +41,132 @@
         and building innovative solutions for a better tomorrow.
       </p>
 
-      <!-- Buttons -->
       <div class="social-buttons">
-
-        <a href="https://github.com/tusharkantapalo" target="_blank" class="btn-social">
-          GitHub
-        </a>
-
-        <a href="https://www.linkedin.com/in/tusharkantapalo/" target="_blank" class="btn-social">
-          LinkedIn
-        </a>
-
+        <a href="https://github.com/tusharkantapalo" target="_blank" class="btn-social">GitHub</a>
+        <a href="https://www.linkedin.com/in/tusharkantapalo/" target="_blank" class="btn-social">LinkedIn</a>
+        <a href="#contact" class="main-btn">Contact Me</a>
       </div>
     </div>
 
-    <!-- Right Side Image -->
-    <div class="hero-right">
-
+    <div class="hero-right reveal">
       <div class="image-shape">
-        <img src="./profile.jpeg" alt="Tusharkanta Palo">
+        <img src="./profile.jpeg" alt="Tusharkanta Palo" />
       </div>
-
     </div>
+  </main>
 
-  </section>
-
-  <!-- Cards Section -->
+  <!-- SECTIONS -->
   <section class="cards-container">
-
-    <!-- ABOUT SECTION -->
-    <div id="about" class="card">
+    <!-- Horizontal group: ABOUT / SKILLS / PROJECTS / EDUCATION -->
+    <div class="horizontal-sections">
+      <!-- ABOUT -->
+      <div id="about" class="card reveal full-bleed">
         <h2>About Me</h2>
 
         <p>
-            I am TUSHARKANTA PALO, a B.Tech student in Computer Science and Engineering (CSE) at Silicon Institute of Technology, Bhubaneswar, Odisha.
+          I am <strong>TUSHARKANTA PALO</strong>, a B.Tech student in Computer Science and Engineering (CSE) at Silicon Institute of Technology, Bhubaneswar, Odisha.
         </p>
 
         <div id="aboutMore" class="more-text">
-            <p>
-                I am passionate about technology, software development, and problem-solving, with interests in Artificial Intelligence, Data Science, and Software Engineering.
-            </p>
+          <p>
+            I am passionate about technology, software development, and problem-solving, with interests in Artificial Intelligence, Data Science, and Software Engineering.
+          </p>
 
-            <p>
-                I have a strong foundation in C, Python, and Data Structures & Algorithms (DSA), complemented by hands-on experience with HTML and CSS for building responsive web applications. I enjoy solving complex problems, developing practical software solutions, and continuously enhancing my expertise in software engineering, full-stack development, and emerging technologies.
-            </p>
+          <p>
+            I have a strong foundation in C, Python, and Data Structures & Algorithms (DSA), complemented by hands-on experience with HTML and CSS for building responsive web applications. I enjoy solving complex problems, developing practical software solutions, and continuously enhancing my expertise in software engineering, full-stack development, and emerging technologies.
+          </p>
         </div>
 
-        <button class="read-btn" onclick="toggleAbout()" id="aboutBtn">
-            Read More
-        </button>
-    </div>
+        <button class="read-btn" onclick="toggleAbout()" id="aboutBtn">Read More</button>
+      </div>
 
-    <!-- Skills -->
-    <div class="card" id="skill">
-      <h2>Skills</h2>
+      <!-- SKILLS -->
+      <div class="card reveal full-bleed" id="skill">
+        <h2>Skills</h2>
 
-      <ul class="skills-list">
-        <li>HTML5</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>Python</li>
-        <li>C (Programming Language)</li>
-        <li>Data Structures and Algorithms (DSA) in C</li>
-      </ul>
-    </div>
+        <ul class="skills-list">
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>JavaScript</li>
+          <li>Python</li>
+          <li>C (Programming Language)</li>
+          <li>Data Structures and Algorithms (DSA) in C</li>
+        </ul>
+      </div>
 
-    <!-- PROJECT SECTION -->
-    <div class="card" id="project">
+      <!-- PROJECTS -->
+      <div class="card reveal full-bleed" id="project">
         <h2>Projects</h2>
 
-        <!-- Visible Initially -->
-        <h3>Personal Portfolio Website:-</h3>
-        <ol>
-            <li>Designed responsive portfolio using HTML/CSS.</li>
-            <li>Showcased skills, projects, education, contact.</li>
-            <li>Implemented responsive, semantic web design.</li>
-            <li>Integrated GitHub and LinkedIn profiles.</li>
-            <li>Concepts used:- JavaScript, HTML5, CSS3, Semantic HTML, Git & Github</li>
+        <h3>Personal Portfolio Website</h3>
+        <ol class="project-list">
+          <li>Designed responsive portfolio using HTML/CSS.</li>
+          <li>Showcased skills, projects, education, contact.</li>
+          <li>Implemented responsive, semantic web design.</li>
+          <li>Integrated GitHub and LinkedIn profiles.</li>
+          <li>Concepts used: JavaScript, HTML5, CSS3, Semantic HTML, Git & GitHub</li>
         </ol>
 
-        <!-- Hidden Initially -->
         <div id="projectMore" class="more-text">
-            <h3>Subscription Billing Engine:-</h3>
-            <ol>
-                <li>Developed Python subscription billing engine.</li>
-                <li>Implemented billing, discounts, invoices, payments.</li>
-                <li>Built modular OOP SQLite architecture.</li>
-                <li>Simulated real-world SaaS billing workflows.</li>
-                <li>Concepts used:- Python3, SQLite, Test Driven Development, Object-Oriented Programming (OOP), Polymorphism, Abstract Base Classes (ABC), Data Classes, Git, GitHub, Virtual Environment (venv), CLI</li>
-            </ol>
+          <h3>Subscription Billing Engine</h3>
+          <ol class="project-list">
+            <li>Developed Python subscription billing engine.</li>
+            <li>Implemented billing, discounts, invoices, payments.</li>
+            <li>Built modular OOP SQLite architecture.</li>
+            <li>Simulated real-world SaaS billing workflows.</li>
+            <li>Concepts used: Python3, SQLite, Test Driven Development, OOP, Polymorphism, ABC, Data Classes, Git, GitHub, Virtual Environment (venv), CLI</li>
+          </ol>
         </div>
 
-        <button class="read-btn" onclick="toggleProject()" id="projectBtn">
-            Read More
-        </button>
-    </div>
+        <button class="read-btn" onclick="toggleProject()" id="projectBtn">Read More</button>
+      </div>
 
-    <!-- EDUCATION SECTION -->
-    <div class="card" id="education">
+      <!-- EDUCATION -->
+      <div class="card reveal full-bleed" id="education">
         <h2>Education</h2>
 
-        <!-- Visible First -->
         <div class="education-item">
-            <span>2025 - 2029</span>
-            <h3>B.Tech in Computer Science and Engineering</h3>
-            <p>Silicon Institute of Technology, Bhubaneswar, Odisha</p>
-            <p>CGPA - <strong>9.73</strong>(33 / 878 rank)</p>
+          <span>2025 - 2029</span>
+          <h3>B.Tech in Computer Science and Engineering</h3>
+          <p>Silicon Institute of Technology, Bhubaneswar, Odisha</p>
+          <p>CGPA - <strong>9.73</strong> (33 / 878 rank)</p>
         </div>
 
-        <!-- Hidden Initially -->
         <div id="eduMore" class="more-text">
+          <div class="education-item">
+            <span>2023</span>
+            <h3>12th Standard</h3>
+            <p>Saraswati Vidya Mandir H.S. School, Berhampur, Odisha</p>
+            <p><strong>CHSE Board</strong> — 84%</p>
+          </div>
 
-            <div class="education-item">
-                <span>2023</span>
-                <h3>12th Standard</h3>
-                <p>Saraswati Vidya Mandir H.S. School, Berhampur, Odisha</p>
-                <p><strong>CHSE Board</strong> — 84%</p>
-            </div>
-
-            <div class="education-item">
-                <span>2021</span>
-                <h3>10th Standard</h3>
-                <p>Saraswati Sishu Vidya Mandir, Berhampur, Odisha</p>
-                <p><strong>BSE Board</strong> — 95%</p>
-            </div>
-
+          <div class="education-item">
+            <span>2021</span>
+            <h3>10th Standard</h3>
+            <p>Saraswati Sishu Vidya Mandir, Berhampur, Odisha</p>
+            <p><strong>BSE Board</strong> — 95%</p>
+          </div>
         </div>
 
-        <button class="read-btn" onclick="toggleEducation()" id="eduBtn">
-            Read More
-        </button>
+        <button class="read-btn" onclick="toggleEducation()" id="eduBtn">Read More</button>
+      </div>
     </div>
 
+    <!-- CONTACT -->
+    <div class="card contact reveal" id="contact">
+      <h2>Contact</h2>
+      <p style="text-align: center;">📞 +91 63711 03045</p>
+      <p style="text-align: center;">📩 tusharkantapalo@gmail.com</p>
+      <p style="text-align: center; margin-top: 10px;">
+        <a class="contact-link" href="mailto:tusharkantapalo@gmail.com">Send Email</a>
+      </p>
+    </div>
   </section>
-  <!-- Contact Section -->
-    <div class="contact" id="contact">
-        <div class="card">
-            <h2 style="text-align: center;">Connect With Me</h2>
 
-            <p style="text-align: center;">📞 +91 63711 03045</p>
-            <p style="text-align: center;">📩 tusharkantapalo@gmail.com</p>
-        </div>
-    </div>
-  <script>
-
-function toggleAbout(){
-
-    var moreText = document.getElementById("aboutMore");
-    var btn = document.getElementById("aboutBtn");
-
-    if(moreText.style.display === "block"){
-        moreText.style.display = "none";
-        btn.innerHTML = "Read More";
-    }
-    else{
-        moreText.style.display = "block";
-        btn.innerHTML = "Read Less";
-    }
-}
-
-
-function toggleEducation(){
-
-    var moreText = document.getElementById("eduMore");
-    var btn = document.getElementById("eduBtn");
-
-    if(moreText.style.display === "block"){
-        moreText.style.display = "none";
-        btn.innerHTML = "Read More";
-    }
-    else{
-        moreText.style.display = "block";
-        btn.innerHTML = "Read Less";
-    }
-}
-
-function toggleProject(){
-
-    var moreText = document.getElementById("projectMore");
-    var btn = document.getElementById("projectBtn");
-
-    if(moreText.style.display === "block"){
-        moreText.style.display = "none";
-        btn.innerHTML = "Read More";
-    }
-    else{
-        moreText.style.display = "block";
-        btn.innerHTML = "Read Less";
-    }
-}
-
-</script>
-
-  <!-- Footer -->
   <footer>
-    <p>&copy; 2026 Tusharkanta Palo. All rights reserved.</p>
+    <p>© 2026 Tusharkanta Palo. Built with passion for software engineering.</p>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
