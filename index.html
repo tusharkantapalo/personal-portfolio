@@ -22,20 +22,19 @@
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#skill">Skills</a></li>
+      <li><a href="#project">Projects</a></li>
       <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experiences</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </header>
 
-  <!-- HERO -->
+  <!-- HERO SECTION -->
   <main id="home" class="hero">
     <div class="hero-left reveal">
       <h3>Hello, I’m</h3>
-
       <h1>Tusharkanta Palo</h1>
-
       <h2>Computer Science Engineering Student</h2>
-
       <p>
         Passionate about solving real-world problems using technology
         and building innovative solutions for a better tomorrow.
@@ -55,11 +54,19 @@
     </div>
   </main>
 
-  <!-- SECTIONS -->
-  <section class="cards-container">
+  <!-- SINGLE FLOATING PHOTO THAT MOVES CORNER-TO-CORNER -->
+  <div id="floating-photo" class="floating-photo-container">
+    <div class="image-shape">
+      <img src="./profile.jpeg" alt="Tusharkanta Palo" />
+    </div>
+  </div>
+
+  <!-- SECTIONS CONTAINER -->
+  <main class="cards-container">
     
-    <!-- ABOUT -->
-      <div id="about" class="card reveal full-bleed">
+    <!-- SECTION 1: ABOUT ME (Right Side Target) -->
+    <section class="section-row reveal" id="about">
+      <div class="card">
         <h2>About Me</h2>
         <hr/>
         <p>
@@ -70,17 +77,19 @@
           <p>
             I am passionate about technology, software development, and problem-solving, with interests in Artificial Intelligence, Data Science, and Software Engineering.
           </p>
-
           <p>
-            I have a strong foundation in C, Python, and Data Structures & Algorithms (DSA), complemented by hands-on experience with HTML and CSS for building responsive web applications. I enjoy solving complex problems, developing practical software solutions, and continuously enhancing my expertise in software engineering, full-stack development, and emerging technologies.
+            I have a strong foundation in C, Python, and Data Structures & Algorithms (DSA), complemented by hands-on experience with HTML and CSS for building responsive web applications.
           </p>
         </div>
 
         <button class="read-btn" onclick="toggleAbout()" id="aboutBtn">Read More</button>
       </div>
+      <div class="photo-anchor align-right"></div>
+    </section>
 
-      <!-- SKILLS -->
-      <div class="card reveal full-bleed" id="skill">
+    <!-- SECTION 2: SKILLS (Left Side Target) -->
+    <section class="section-row reverse reveal" id="skill">
+      <div class="card">
         <h2>Skills</h2>
         <hr/>
         <ul class="skills-list">
@@ -92,9 +101,12 @@
           <li>Data Structures and Algorithms (DSA) in C</li>
         </ul>
       </div>
+      <div class="photo-anchor align-left"></div>
+    </section>
 
-      <!-- PROJECTS -->
-      <div class="card reveal full-bleed" id="project">
+    <!-- SECTION 3: PROJECTS (Right Side Target) -->
+    <section class="section-row reveal" id="project">
+      <div class="card">
         <h2>Projects</h2>
         <hr/>
         <h3>Personal Portfolio Website</h3>
@@ -119,11 +131,14 @@
 
         <button class="read-btn" onclick="toggleProject()" id="projectBtn">Read More</button>
       </div>
+      <div class="photo-anchor align-right"></div>
+    </section>
 
-      <!-- EDUCATION -->
-      <div class="card reveal full-bleed" id="education">
+    <!-- SECTION 4: EDUCATION (Left Side Target) -->
+    <section class="section-row reverse reveal" id="education">
+      <div class="card">
         <h2>Education</h2>
-
+        <hr/>
         <div class="education-item">
           <span>2025 - 2029</span>
           <h3>B.Tech in Computer Science and Engineering</h3>
@@ -149,18 +164,21 @@
 
         <button class="read-btn" onclick="toggleEducation()" id="eduBtn">Read More</button>
       </div>  
+      <div class="photo-anchor align-left"></div>
+    </section>
 
-    <!--Experiences-->
-    <div class="card reveal full-bleed" id="project">
+    <!-- SECTION 5: EXPERIENCES (Right Side Target) -->
+    <section class="section-row reveal" id="experience">
+      <div class="card">
         <h2>Experiences</h2>
         <hr/>
-        <h3>Student Intern at Syllogistek Private Limited :-</h3>
-        <h5>Start Date - 25th May 2026</h5>
-        <h5>End Date - 18th June 2026</h5>
+        <h3>Student Intern at Syllogistek Private Limited</h3>
+        <h5>Start Date - 25th May 2026 | End Date - 18th June 2026</h5>
         <p>During this internship, I gained hands-on experience in Python, Object-Oriented Programming (OOP), Data Structures & Algorithms, SQLite, Git/GitHub, File Handling, Exception Handling, and Software Development through practical assignments and coding sessions.</p>
         <p>As my final project, I developed a Subscription Billing Engine using Python and Test-Driven Development (TDD), implementing recurring billing, pricing strategies, discounts, tax calculations, invoice generation, payment processing, and subscription lifecycle management.</p>
-
       </div>
+      <div class="photo-anchor align-right"></div>
+    </section>
 
     <!-- CONTACT -->
     <div class="card contact reveal" id="contact">
@@ -171,7 +189,7 @@
         <a class="contact-link" href="mailto:tusharkantapalo@gmail.com">Send Email</a>
       </p>
     </div>
-  </section>
+  </main>
 
   <footer>
     <p>&copy; 2026 Tusharkanta Palo. Built with passion for software engineering.</p>
