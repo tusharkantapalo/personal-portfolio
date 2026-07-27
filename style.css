@@ -11,9 +11,26 @@ html {
 body {
   font-family: 'Poppins', sans-serif;
   color: #1f2937;
-  background-color: #0b1329; /* Dark neutral base background */
+  background-color: #0b1329;
   min-height: 100vh;
   overflow-x: hidden;
+}
+
+/* FIXED BACKGROUND CANVAS FOR FRAME ANIMATION */
+#hero-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.85;
+
+  /* Blur effect & edge scaling fix */
+  
+  transform: scale(1.05);
 }
 
 /* NAVBAR */
@@ -60,7 +77,7 @@ body {
   color: #38bdf8;
 }
 
-/* HERO SECTION - DARK STUDIO BACKGROUND */
+/* HERO SECTION - MATCHED TO ABOUT ME CARD BACKDROP */
 .hero {
   width: 100%;
   min-height: 88vh;
@@ -69,15 +86,13 @@ body {
   justify-content: space-between;
   gap: 48px;
   padding: 70px 8%;
+  position: relative;
+  z-index: 10;
   
-  /* Uploaded dark studio background image */
-  background: 
-    linear-gradient(
-      135deg, 
-      rgba(10, 25, 47, 0.4) 0%, 
-      transparent 100%
-    ),
-    url('./hero_background.png') no-repeat center center / cover;
+  /* Semi-transparent dark background matched to .card */
+  background: rgba(10, 25, 47, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   
   border-bottom: 1px solid rgba(56, 189, 248, 0.2);
 }
@@ -168,7 +183,7 @@ body {
   align-items: center;
 }
 
-/* STANDARDIZED PHOTO DIMENSIONS (320px x 400px) */
+/* STANDARDIZED PHOTO DIMENSIONS */
 .image-shape {
   width: min(320px, 100%);
   aspect-ratio: 4 / 5;
@@ -212,7 +227,7 @@ body {
   opacity: 1;
 }
 
-/* SECTIONS CONTAINER - WIDER LAYOUT */
+/* SECTIONS CONTAINER */
 .cards-container {
   width: 100%;
   max-width: 1400px;
@@ -221,6 +236,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 60px;
+  position: relative;
+  z-index: 5;
 }
 
 .section-row {
@@ -240,32 +257,27 @@ body {
   flex: 1;
 }
 
-/* INVISIBLE PLACEHOLDER ANCHORS - MATCHED SIZING */
 .photo-anchor {
   flex: 0 0 320px;
   height: 400px;
 }
 
-/* CARDS: HERO BACKGROUND APPLIED DIRECTLY TO EACH SECTION CARD */
+/* TRANSPARENT CARDS FOR REST OF THE WEBPAGE */
 .card {
-  background: 
-    linear-gradient(
-      135deg, 
-      rgba(10, 25, 47, 0.75) 0%, 
-      rgba(15, 23, 42, 0.85) 100%
-    ),
-    url('./hero_background.png') no-repeat center center / cover;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(10, 25, 47, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 22px;
   padding: 30px;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
   transition: transform 0.35s ease, box-shadow 0.35s ease, opacity 0.25s ease;
 }
 
 .card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 22px 50px rgba(56, 189, 248, 0.15);
-  border-color: rgba(56, 189, 248, 0.35);
+  box-shadow: 0 22px 50px rgba(56, 189, 248, 0.2);
+  border-color: rgba(56, 189, 248, 0.4);
 }
 
 .card h2 {
@@ -325,8 +337,8 @@ body {
   margin-bottom: 18px;
   padding: 14px 16px;
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .education-item span {
@@ -349,7 +361,7 @@ body {
   margin-top: 14px;
 }
 
-/* TRANSPARENT READ MORE / READ LESS BUTTONS */
+/* READ BUTTONS */
 .read-btn {
   margin-top: 16px;
   padding: 11px 24px;
@@ -402,7 +414,9 @@ footer {
   padding: 28px 16px;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   color: #94a3b8;
-  background: rgba(10, 25, 47, 0.9);
+  background: rgba(10, 25, 47, 0.95);
+  position: relative;
+  z-index: 10;
 }
 
 /* ANIMATIONS & SCROLL REVEAL EFFECTS */

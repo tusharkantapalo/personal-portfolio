@@ -12,6 +12,10 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <!-- BACKGROUND SCROLL ANIMATION CANVAS -->
+  <canvas id="hero-canvas"></canvas>
+
   <!-- NAVBAR -->
   <header class="navbar">
     <div class="logo">
@@ -54,7 +58,7 @@
     </div>
   </main>
 
-  <!-- SINGLE FLOATING PHOTO THAT MOVES CORNER-TO-CORNER -->
+  <!-- FLOATING PHOTO CONTAINER -->
   <div id="floating-photo" class="floating-photo-container">
     <div class="image-shape">
       <img src="./profile.jpeg" alt="Tusharkanta Palo" />
@@ -64,7 +68,7 @@
   <!-- SECTIONS CONTAINER -->
   <main class="cards-container">
     
-    <!-- SECTION 1: ABOUT ME (Right Side Target) -->
+    <!-- SECTION 1: ABOUT ME -->
     <section class="section-row reveal" id="about">
       <div class="card">
         <h2>About Me</h2>
@@ -87,7 +91,7 @@
       <div class="photo-anchor align-right"></div>
     </section>
 
-    <!-- SECTION 2: SKILLS (Left Side Target) -->
+    <!-- SECTION 2: SKILLS -->
     <section class="section-row reverse reveal" id="skill">
       <div class="card">
         <h2>Skills</h2>
@@ -104,7 +108,7 @@
       <div class="photo-anchor align-left"></div>
     </section>
 
-    <!-- SECTION 3: PROJECTS (Right Side Target) -->
+    <!-- SECTION 3: PROJECTS -->
     <section class="section-row reveal" id="project">
       <div class="card">
         <h2>Projects</h2>
@@ -134,7 +138,7 @@
       <div class="photo-anchor align-right"></div>
     </section>
 
-    <!-- SECTION 4: EDUCATION (Left Side Target) -->
+    <!-- SECTION 4: EDUCATION -->
     <section class="section-row reverse reveal" id="education">
       <div class="card">
         <h2>Education</h2>
@@ -167,7 +171,7 @@
       <div class="photo-anchor align-left"></div>
     </section>
 
-    <!-- SECTION 5: EXPERIENCES (Right Side Target) -->
+    <!-- SECTION 5: EXPERIENCES -->
     <section class="section-row reveal" id="experience">
       <div class="card">
         <h2>Experiences</h2>
@@ -191,6 +195,7 @@
     </div>
   </main>
 
+  <!-- FOOTER -->
   <footer>
     <p>&copy; 2026 Tusharkanta Palo. Built with passion for software engineering.</p>
   </footer>

@@ -1,3 +1,76 @@
+/* =========================================================
+   1. BACKGROUND FRAME SCROLL ANIMATION SYSTEM
+   ========================================================= */
+const totalFrames = 603;                     // frame_00000 to frame_00602
+const frameFolder = 'scroll_animation';      // Frame folder name
+const framePrefix = 'frame_';                // Frame file prefix
+const frameExtension = '.jpg';               // JPG extension
+const padDigits = 5;                         // 5 digits padding
+
+const canvas = document.getElementById('hero-canvas');
+const context = canvas.getContext('2d');
+
+const images = [];
+const videoFrames = { currentFrame: 0 };
+
+function getFramePath(index) {
+  const paddedIndex = index.toString().padStart(padDigits, '0');
+  return `./${frameFolder}/${framePrefix}${paddedIndex}${frameExtension}`;
+}
+
+function drawFrame(index) {
+  const img = images[index];
+  if (!img || !img.complete || img.naturalWidth === 0) return;
+
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  const hRatio = canvas.width / img.width;
+  const vRatio = canvas.height / img.height;
+  const ratio = Math.max(hRatio, vRatio);
+
+  const centerShift_x = (canvas.width - img.width * ratio) / 2;
+  const centerShift_y = (canvas.height - img.height * ratio) / 2;
+
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  context.drawImage(
+    img,
+    0, 0, img.width, img.height,
+    centerShift_x, centerShift_y, img.width * ratio, img.height * ratio
+  );
+}
+
+function preloadImages() {
+  for (let i = 0; i < totalFrames; i++) {
+    const img = new Image();
+    img.src = getFramePath(i);
+
+    if (i === 0) {
+      img.onload = () => drawFrame(0);
+    }
+    images.push(img);
+  }
+}
+
+function updateFrameOnScroll() {
+  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+  if (maxScroll <= 0) return;
+
+  const scrollFraction = Math.max(0, Math.min(1, window.scrollY / maxScroll));
+  const frameIndex = Math.floor(scrollFraction * (totalFrames - 1));
+
+  if (frameIndex !== videoFrames.currentFrame) {
+    videoFrames.currentFrame = frameIndex;
+    requestAnimationFrame(() => drawFrame(frameIndex));
+  }
+}
+
+preloadImages();
+
+/* =========================================================
+   2. EXISTING PORTFOLIO FUNCTIONALITY
+   ========================================================= */
+
 /* Toggle functions for expand/collapse cards */
 function toggleAbout() {
   const moreText = document.getElementById("aboutMore");
@@ -160,11 +233,12 @@ function updateFloatingPhotoPosition() {
   });
 }
 
-/* Throttle Scroll Handler for Smooth Performance */
+/* Combined Scroll Handler for Canvas & Floating Photo */
 let isTicking = false;
 window.addEventListener("scroll", () => {
   if (!isTicking) {
     window.requestAnimationFrame(() => {
+      updateFrameOnScroll();
       updateFloatingPhotoPosition();
       isTicking = false;
     });
@@ -172,10 +246,14 @@ window.addEventListener("scroll", () => {
   }
 });
 
-window.addEventListener("resize", updateFloatingPhotoPosition);
+window.addEventListener("resize", () => {
+  drawFrame(videoFrames.currentFrame);
+  updateFloatingPhotoPosition();
+});
+
 window.addEventListener("load", updateFloatingPhotoPosition);
 
-/* PERFECT NAVBAR SMOOTH SCROLL & EXACT SECTION ALIGNMENT FIX */
+/* NAVBAR SMOOTH SCROLL */
 document.querySelectorAll('.nav-links a[href^="#"]').forEach((link) => {
   link.addEventListener("click", function (e) {
     e.preventDefault();
@@ -190,31 +268,26 @@ document.querySelectorAll('.nav-links a[href^="#"]').forEach((link) => {
       let targetPosition;
 
       if (targetId === "#home") {
-        // Hero / Home section goes straight to top
         targetPosition = 0;
       } else {
-        // Measure exact card/section offset relative to current scroll
         const rect = targetElement.getBoundingClientRect();
-        
-        // Align section top nicely below the sticky navbar with standard padding
         targetPosition = window.scrollY + rect.top - navbarHeight - 20;
       }
 
-      // Smooth scroll to calculated section position
       window.scrollTo({
         top: Math.max(0, targetPosition),
         behavior: "smooth",
       });
 
-      // Continuously recalculate photo position during scroll animation
       let scrollInterval = setInterval(() => {
         updateFloatingPhotoPosition();
+        updateFrameOnScroll();
       }, 16);
 
-      // Final alignment check when scrolling stops
       setTimeout(() => {
         clearInterval(scrollInterval);
         updateFloatingPhotoPosition();
+        updateFrameOnScroll();
       }, 850);
     }
   });
